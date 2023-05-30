@@ -21,7 +21,6 @@ public class turretspin : MonoBehaviour
         _turretspin.transform.DOLocalRotate(new Vector3(0f, 0, 90), 1f)
                 .SetLoops(-1, LoopType.Incremental)
                 .SetEase(Ease.Linear);
-        
     }
 
     

@@ -84,7 +84,6 @@ public class launcher : MonoBehaviour
                 nearestEnemy = fighter;
             }
         }
-
         if (nearestEnemy!=null&& shortestdistance<=range)
         {
             target = nearestEnemy.transform;
