@@ -22,10 +22,7 @@ public class camerafollower : MonoBehaviour
             ischasing = true;
             _launcher.enabled = false;
         }
-
-        
     }
-
     private void LateUpdate()
     {
         if (ischasing)
