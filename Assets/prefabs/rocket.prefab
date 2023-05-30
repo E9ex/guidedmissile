@@ -127,3 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4332b8392313848bfaecef8c0bfd78fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 7508793386658175235, guid: feffb0a15e8fb451098b3f8797bb26d4, type: 3}
+  speed: 50
+  rotatespeed: 100
+  explosion: {fileID: 355388660074524211, guid: a071a125b88c34359b2c3e2ce151c386, type: 3}

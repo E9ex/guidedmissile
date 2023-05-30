@@ -7,7 +7,7 @@ public class launcher : MonoBehaviour
 {
     private Camera cam;
     public LayerMask targetmask;
-    public float focustime;
+    public Transform target;
     private GameObject focusobject;
     public Transform exitpoint;
     public GameObject rocketprefab;
@@ -16,44 +16,23 @@ public class launcher : MonoBehaviour
     {
         cam=Camera.main;
     }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        focustimer();
         if (Input.GetMouseButtonDown(0))
         {
-            if (focustime>=2)
-            {
                 GameObject temp = Instantiate(rocketprefab, exitpoint.position, Quaternion.identity);
                 temp.transform.forward = transform.forward;
                 if (temp.TryGetComponent(out rocket rocket))
                 {
-                    rocket.target = focusobject.transform;
+                    //rocket.target = focusobject.transform;
+                    rocket.target = target;
                 }
-
-                focusobject = null;
-            }
+                else
+                {
+                    focusobject = null;
+                }
         }
     }
-
-    void focustimer()
-    {
-        if (focusobject)
-        {
-            focustime += Time.deltaTime;
-        }
-        else
-        {
-            focustime = 0;
-        }
-    }
-
     private void FixedUpdate()
     {
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
