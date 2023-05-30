@@ -11,6 +11,7 @@ public class launcher : MonoBehaviour
     private GameObject focusobject;
     public Transform exitpoint;
     public GameObject rocketprefab;
+    private float range = 250;
 
     private void Awake()
     {
@@ -35,6 +36,15 @@ public class launcher : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        // Collider[] colliders = Physics.OverlapSphere(transform.position, range, targetmask);
+        // if (colliders.Length > 0)
+        // {
+        //     focusobject = colliders[0].gameObject;
+        // }
+        // else
+        // {
+        //     focusobject = null;
+        // }
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray,out hit,Mathf.Infinity,targetmask))
@@ -45,5 +55,11 @@ public class launcher : MonoBehaviour
         {
             focusobject = null;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color=Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 }

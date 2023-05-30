@@ -10,9 +10,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/camerafollower.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="ProjectId" id="2QTX4ZCNQ986ZkQvyV7WN3zRoCp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -85,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1685378356669</updated>
       <workItem from="1685393685224" duration="2483000" />
-      <workItem from="1685450759556" duration="6111000" />
+      <workItem from="1685450759556" duration="10534000" />
     </task>
     <servers />
   </component>

@@ -21,7 +21,9 @@ public class camerafollower : MonoBehaviour
             transform.parent = null;
             ischasing = true;
             _launcher.enabled = false;
-        }   
+        }
+
+        
     }
 
     private void LateUpdate()

@@ -13,6 +13,6 @@ public class plane : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward*25*Time.deltaTime);
+        transform.Translate(Vector3.forward*45*Time.deltaTime);
     }
 }
