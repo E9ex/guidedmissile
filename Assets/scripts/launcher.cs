@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class launcher : MonoBehaviour
 {
@@ -12,10 +13,16 @@ public class launcher : MonoBehaviour
     public Transform exitpoint;
     public GameObject rocketprefab;
     private float range = 250;
+    public static  launcher instance;
+    private turretspin _turretspin;
+
 
     private void Awake()
     {
+        _turretspin = GetComponent<turretspin>();
+        instance = this;
         cam=Camera.main;
+        InvokeRepeating("updatetarget",0f,0.5f);
     }
     void Update()
     {
@@ -33,6 +40,12 @@ public class launcher : MonoBehaviour
                     focusobject = null;
                 }
         }
+
+        if (target==null)
+        {
+            return;
+        }
+        
     }
     private void FixedUpdate()
     {
@@ -57,9 +70,41 @@ public class launcher : MonoBehaviour
         }
     }
 
+    public void updatetarget()
+    {
+        GameObject [] fighters = GameObject.FindGameObjectsWithTag("enemy");
+        float shortestdistance = Mathf.Infinity;
+        GameObject nearestEnemy = null;
+        foreach (GameObject fighter in fighters)
+        {
+            float distancetoenemy = Vector3.Distance(transform.position,  fighter.transform.position);
+            if (distancetoenemy<shortestdistance)
+            {
+                shortestdistance = distancetoenemy;
+                nearestEnemy = fighter;
+            }
+        }
+
+        if (nearestEnemy!=null&& shortestdistance<=range)
+        {
+            target = nearestEnemy.transform;
+        }
+        else
+        {
+            target = null;
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color=Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+    // void SpinTurret()
+    // {
+    //     
+    //         Launcher.transform.DOLocalRotate(new Vector3(0f, 0, 90), 1f)
+    //             .SetLoops(-1, LoopType.Incremental)
+    //             .SetEase(Ease.Linear).SetOptions(islooking);
+    //     
+    // }
 }

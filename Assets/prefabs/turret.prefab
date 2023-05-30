@@ -392,7 +392,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 83.79663
+  field of view: 58.73949
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -478,6 +478,7 @@ GameObject:
   - component: {fileID: 1738423163178676371}
   - component: {fileID: 4596437025179064775}
   - component: {fileID: 4596437025179064780}
+  - component: {fileID: 4596437025179064781}
   m_Layer: 0
   m_Name: orbit
   m_TagString: Untagged
@@ -492,7 +493,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3222572135202124627}
-  m_LocalRotation: {x: 0.00000008904561, y: -0.000000074739326, z: 0.11469521, w: 0.99340075}
+  m_LocalRotation: {x: -1.6156505e-11, y: 2.3226943e-10, z: -0.074586675, w: 0.99721456}
   m_LocalPosition: {x: 0.00005468847, y: -0.00006208722, z: 0.0024990886}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -501,7 +502,7 @@ Transform:
   - {fileID: 7979112904640674006}
   m_Father: {fileID: 6815107135520616997}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 733.172}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.555}
 --- !u!33 &857547901438482732
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -559,7 +560,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3222572135202124627}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 390f972b3a1e62341ad150cbe29782f3, type: 3}
   m_Name: 
@@ -610,6 +611,19 @@ MonoBehaviour:
   target: {fileID: 0}
   exitpoint: {fileID: 0}
   rocketprefab: {fileID: 8412846847846790465, guid: 69a15cf6a0647420caaa7a8118d58bc2, type: 3}
+--- !u!114 &4596437025179064781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222572135202124627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2a61a2345a24bb189b6c05cfff2d52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _turretspin: {fileID: 3834902575214224105}
 --- !u!1 &3248803900110548795
 GameObject:
   m_ObjectHideFlags: 0
