@@ -45,6 +45,7 @@ public class launcher : MonoBehaviour
         {
             return;
         }
+        updatetarget();
         
     }
     private void FixedUpdate()
