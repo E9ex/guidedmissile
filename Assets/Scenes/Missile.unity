@@ -157,6 +157,19 @@ MonoBehaviour:
   targetlock: {fileID: 8300000, guid: 1c6fda33240984a7595f7f2bab00729b, type: 3}
   missilecarpti: {fileID: 8300000, guid: c7c4840f710714567b8de650b89084cc, type: 3}
   missileateslendi: {fileID: 8300000, guid: 152c2db5109524be3b73c851687a10bd, type: 3}
+  sounds:
+  - audioClip: {fileID: 8300000, guid: 38e84ef45254348cbb881e132bd64ba9, type: 3}
+    soundType: 0
+    volume: 0.5
+  - audioClip: {fileID: 8300000, guid: 1c6fda33240984a7595f7f2bab00729b, type: 3}
+    soundType: 1
+    volume: 0.5
+  - audioClip: {fileID: 8300000, guid: c7c4840f710714567b8de650b89084cc, type: 3}
+    soundType: 2
+    volume: 0.5
+  - audioClip: {fileID: 8300000, guid: 152c2db5109524be3b73c851687a10bd, type: 3}
+    soundType: 3
+    volume: 0.5
 --- !u!82 &106951637
 AudioSource:
   m_ObjectHideFlags: 0
@@ -169,7 +182,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.588
   m_Pitch: 1
   Loop: 0
   Mute: 0
