@@ -43,7 +43,7 @@ public class launcher : MonoBehaviour
                 }
                 if (!missilelaunched)
                 {
-                    SoundManager.instance.MissileLaunched();
+                    // SoundManager.instance.MissileLaunched();
                     missilelaunched = true;
                 }
             

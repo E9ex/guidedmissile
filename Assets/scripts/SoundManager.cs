@@ -1,8 +1,6 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public enum SoundType
 {
@@ -51,7 +49,7 @@ public class SoundManager : MonoBehaviour
         PlaySound(SoundType.MissileHit);
     }
 
-    private Sound GetSound(SoundType soundType)
+    public Sound GetSound(SoundType soundType)
     {
         foreach (var sound in sounds)
         {
