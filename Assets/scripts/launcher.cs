@@ -87,6 +87,8 @@ public class launcher : MonoBehaviour
         if (nearestEnemy!=null&& shortestdistance<=range)
         {
             target = nearestEnemy.transform;
+            _turretspin.transform.DOKill();
+            transform.LookAt(target);
         }
         else
         {

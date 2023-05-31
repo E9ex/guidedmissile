@@ -401,6 +401,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: turret
       objectReference: {fileID: 0}
+    - target: {fileID: 3834902575214224105, guid: b329a1335478748e1925c72e105f4016, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834902575214224105, guid: b329a1335478748e1925c72e105f4016, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834902575214224105, guid: b329a1335478748e1925c72e105f4016, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834902575214224105, guid: b329a1335478748e1925c72e105f4016, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834902575214224105, guid: b329a1335478748e1925c72e105f4016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3834902575214224105, guid: b329a1335478748e1925c72e105f4016, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4596437025179064780, guid: b329a1335478748e1925c72e105f4016, type: 3}
       propertyPath: exitpoint
       value: 
