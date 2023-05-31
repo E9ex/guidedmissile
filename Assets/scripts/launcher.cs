@@ -34,7 +34,7 @@ public class launcher : MonoBehaviour
         {
             if (target == null)
             {
-                Debug.Log("ateslenmiyor krds zorlama");
+                Debug.Log("The target is not within range. ");
                 return;
             }
             GameObject temp = Instantiate(rocketprefab, exitpoint.position, Quaternion.identity);
