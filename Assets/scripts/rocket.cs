@@ -14,6 +14,7 @@ public class rocket : MonoBehaviour
     public float rotatespeed;
     private Rigidbody rb;
     public GameObject explosion;
+    private bool missileishit = false;
   
     
     void Start()
@@ -38,5 +39,11 @@ public class rocket : MonoBehaviour
         Destroy(this.gameObject);
         Destroy(other.gameObject);
         Destroy(explosionObj, 2f);
+        if (!missileishit)
+        {
+            SoundManager.instance.MissileHit();
+            missileishit = true;
+        }
+       
     }
 }

@@ -15,10 +15,14 @@ public class launcher : MonoBehaviour
     private float range = 250;
     public static  launcher instance;
     private turretspin _turretspin;
+    private AudioSource targetlock;
+    private bool hasTargetLocked = false;
+    private bool missilelaunched= false;
 
 
     private void Awake()
     {
+        targetlock = GetComponent<AudioSource>();
         _turretspin = GetComponent<turretspin>();
         instance = this;
         cam=Camera.main;
@@ -38,6 +42,11 @@ public class launcher : MonoBehaviour
                 else
                 {
                     focusobject = null;
+                }
+                if (!missilelaunched)
+                {
+                    SoundManager.instance.MissileLaunched();
+                    missilelaunched = true;
                 }
         }
 
@@ -70,7 +79,6 @@ public class launcher : MonoBehaviour
             focusobject = null;
         }
     }
-
     public void updatetarget()
     {
         GameObject [] fighters = GameObject.FindGameObjectsWithTag("enemy");
@@ -88,12 +96,18 @@ public class launcher : MonoBehaviour
         if (nearestEnemy!=null&& shortestdistance<=range)
         {
             target = nearestEnemy.transform;
-            _turretspin.transform.DOKill();
+            if (!hasTargetLocked)
+            {
+                _turretspin.transform.DOKill();
+                SoundManager.instance.Targetlock();
+                hasTargetLocked = true;
+            }
             transform.LookAt(target);
         }
         else
         {
             target = null;
+            hasTargetLocked = false;
         }
     }
     private void OnDrawGizmosSelected()
@@ -101,12 +115,4 @@ public class launcher : MonoBehaviour
         Gizmos.color=Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
     }
-    // void SpinTurret()
-    // {
-    //     
-    //         Launcher.transform.DOLocalRotate(new Vector3(0f, 0, 90), 1f)
-    //             .SetLoops(-1, LoopType.Incremental)
-    //             .SetEase(Ease.Linear).SetOptions(islooking);
-    //     
-    // }
 }
