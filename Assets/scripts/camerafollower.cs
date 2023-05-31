@@ -9,10 +9,6 @@ public class camerafollower : MonoBehaviour
     public bool ischasing;
     private launcher _launcher;
 
-    private void Awake()
-    {
-        _launcher = GetComponent<launcher>();
-    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -20,12 +16,12 @@ public class camerafollower : MonoBehaviour
             target = GameObject.FindObjectOfType<rocket>().gameObject.transform;
             transform.parent = null;
             ischasing = true;
-            _launcher.enabled = false;
+           launcher.instance.enabled = false;
         }
     }
     private void LateUpdate()
     {
-        if (ischasing)
+        if (ischasing && target != null)
         {
             transform.forward = target.forward;
             transform.position=Vector3.Lerp(transform.position,target.position,Time.deltaTime);

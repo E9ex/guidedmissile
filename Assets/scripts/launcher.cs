@@ -28,33 +28,28 @@ public class launcher : MonoBehaviour
     }
     void Update()
     {
+        
+
         if (Input.GetMouseButtonDown(0))
         {
-                GameObject temp = Instantiate(rocketprefab, exitpoint.position, Quaternion.identity);
-                temp.transform.forward = transform.forward;
-                if (temp.TryGetComponent(out rocket rocket))
-                {
-                    //rocket.target = focusobject.transform;
-                    rocket.target = target;
-                }
-                else
-                {
-                    focusobject = null;
-                }
-                if (!missilelaunched)
-                {
-                    SoundManager.instance.MissileLaunched();
-                    missilelaunched = true;
-                }
-            
-        }
-
-        if (target==null)
-        {
-            return;
+            if (target == null)
+            {
+                Debug.Log("ateslenmiyor krds zorlama");
+                return;
+            }
+            GameObject temp = Instantiate(rocketprefab, exitpoint.position, Quaternion.identity);
+            temp.transform.forward = transform.forward;
+            if (temp.TryGetComponent(out rocket rocket))
+            {
+                rocket.target = target;
+            }
+            else
+            {
+                focusobject = null;
+            }
         }
         updatetarget();
-        
+        Look();
     }
     private void FixedUpdate()
     {
@@ -101,7 +96,6 @@ public class launcher : MonoBehaviour
                 SoundManager.instance.Targetlock();
                 hasTargetLocked = true;
             }
-            transform.LookAt(target);
         }
         else
         {
@@ -109,6 +103,23 @@ public class launcher : MonoBehaviour
             hasTargetLocked = false;
         }
     }
+
+    private void Look()
+    {
+        if (target != null)//lotsofsearch
+        {
+            var targetPos = new Vector3(target.position.x, target.position.y, 0);
+            Vector3 direction = targetPos - transform.position;
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            Vector3 targetEulerAngles = targetRotation.eulerAngles;
+            Vector3 currentEulerAngles = transform.eulerAngles;
+            targetEulerAngles.z = currentEulerAngles.z;  
+            targetRotation.eulerAngles = targetEulerAngles;
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5f * Time.deltaTime);
+
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color=Color.red;

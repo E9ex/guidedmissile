@@ -15,13 +15,17 @@ public class rocket : MonoBehaviour
     private Rigidbody rb;
     public GameObject explosion;
     private bool missileishit = false;
- 
-    
-    void Start()
+    private AudioSource _audioSource;
+    private void Awake()
     {
-      
+        _audioSource = GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
     }
+    private void Start()
+    {
+        _audioSource.PlayOneShot(SoundManager.instance.MissileLaunched());
+    }
+
     private void FixedUpdate()
     {
         rb.velocity = transform.forward * speed;

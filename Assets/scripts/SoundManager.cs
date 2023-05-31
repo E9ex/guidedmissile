@@ -22,9 +22,9 @@ public class SoundManager : MonoBehaviour
     {
         _audioSource.PlayOneShot(targetlock);
     }
-    public void MissileLaunched()
+    public AudioClip MissileLaunched()//cokomelli.
     {
-        _audioSource.PlayOneShot(missileateslendi);
+        return missileateslendi;
     }
     public void MissileHit()
     {
