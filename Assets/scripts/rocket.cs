@@ -15,10 +15,11 @@ public class rocket : MonoBehaviour
     private Rigidbody rb;
     public GameObject explosion;
     private bool missileishit = false;
-  
+ 
     
     void Start()
     {
+      
         rb = GetComponent<Rigidbody>();
     }
     private void FixedUpdate()
@@ -43,8 +44,8 @@ public class rocket : MonoBehaviour
         {
             SoundManager.instance.MissileHit();
             missileishit = true;
-           
         }
+        
        
     }
 }

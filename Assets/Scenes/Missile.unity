@@ -156,8 +156,7 @@ MonoBehaviour:
   radarsesi: {fileID: 8300000, guid: 38e84ef45254348cbb881e132bd64ba9, type: 3}
   targetlock: {fileID: 8300000, guid: 1c6fda33240984a7595f7f2bab00729b, type: 3}
   missilecarpti: {fileID: 8300000, guid: c7c4840f710714567b8de650b89084cc, type: 3}
-  missileateslendi: {fileID: 8300000, guid: 43101bbd9a4a64d7aa2983d57eb9f38b, type: 3}
-  missilehavada: {fileID: 8300000, guid: 69a77d2f122474628ac955611747d05e, type: 3}
+  missileateslendi: {fileID: 8300000, guid: 152c2db5109524be3b73c851687a10bd, type: 3}
 --- !u!82 &106951637
 AudioSource:
   m_ObjectHideFlags: 0
