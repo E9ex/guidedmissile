@@ -15,14 +15,12 @@ public class launcher : MonoBehaviour
     private float range = 250;
     public static  launcher instance;
     private turretspin _turretspin;
-    private AudioSource targetlock;
     private bool hasTargetLocked = false;
-    private bool missilelaunched= false;
+    public bool missilelaunched= false;
 
 
     private void Awake()
     {
-        targetlock = GetComponent<AudioSource>();
         _turretspin = GetComponent<turretspin>();
         instance = this;
         cam=Camera.main;
@@ -48,6 +46,7 @@ public class launcher : MonoBehaviour
                     SoundManager.instance.MissileLaunched();
                     missilelaunched = true;
                 }
+            
         }
 
         if (target==null)

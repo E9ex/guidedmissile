@@ -191,7 +191,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456920676487801617}
-  m_LocalRotation: {x: 0.42443886, y: -0.56555426, z: -0.5655544, w: 0.42443871}
+  m_LocalRotation: {x: 0.44661286, y: 0.5482125, z: 0.5482125, w: 0.44661283}
   m_LocalPosition: {x: -0.0006145458, y: -0.001393682, z: 0.020115789}
   m_LocalScale: {x: 0.009999999, y: 0.009999999, z: 0.009999999}
   m_ConstrainProportionsScale: 0
@@ -199,7 +199,7 @@ Transform:
   - {fileID: 3834902575214224105}
   m_Father: {fileID: 6815107135520616997}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -16.225, y: -90, z: -90}
+  m_LocalEulerAnglesHint: {x: 191.663, y: -90, z: -90}
 --- !u!114 &7324860172842652455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd2a61a2345a24bb189b6c05cfff2d52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _turretspin: {fileID: 3834902575214224105}
+  _turretspin: {fileID: 6176966329816625707}
 --- !u!114 &2333319363584464388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
     m_Bits: 64
   target: {fileID: 0}
   exitpoint: {fileID: 0}
-  rocketprefab: {fileID: 8412846847846790465, guid: 69a15cf6a0647420caaa7a8118d58bc2, type: 3}
+  rocketprefab: {fileID: 7741078276724661960, guid: a1a3a246019074b498b390de98401e97, type: 3}
 --- !u!1 &2528002843528380776
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +541,6 @@ GameObject:
   - component: {fileID: 3834902575214224105}
   - component: {fileID: 857547901438482732}
   - component: {fileID: 1738423163178676371}
-  - component: {fileID: 4596437025179064775}
   m_Layer: 0
   m_Name: orbit
   m_TagString: Untagged
@@ -616,46 +615,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4596437025179064775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3222572135202124627}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 390f972b3a1e62341ad150cbe29782f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boost: 3.5
-  positionLerpTime: 0.2
-  mouseSensitivityCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.5
-      inSlope: 0
-      outSlope: 5
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 2.5
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  rotationLerpTime: 0.01
-  invertY: 0
 --- !u!1 &3248803900110548795
 GameObject:
   m_ObjectHideFlags: 0

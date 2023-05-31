@@ -43,6 +43,7 @@ public class rocket : MonoBehaviour
         {
             SoundManager.instance.MissileHit();
             missileishit = true;
+           
         }
        
     }
